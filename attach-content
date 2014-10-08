@@ -1,0 +1,22 @@
+#!/bin/bash
+
+PS_LIST=$(ps axo 'pid,cmd')
+PLUGIN_CONTAINER=$(echo "$PS_LIST" | grep "plugin-container")
+
+if [ "$?" -ne 0 ]; then
+    echo "No plugin-continer running?"
+    exit 1
+fi
+
+NUM_PC=$(echo "$PLUGIN_CONTAINER" | wc -l)
+
+if [ "$NUM_PC" -gt 1 ]; then
+    echo "More than 1 plugin-container?"
+    exit 1
+fi
+
+# - For Linux case, we use gdb and need executable path to
+#   attach to the process.
+PCPID=$(echo "$PLUGIN_CONTAINER" | sed 's/^ *//' | cut -f 1 -d ' ')
+echo "Found plugin-container, PID: $PCPID"
+sudo gdb "$(readlink -f /proc/$PCPID/exe)" $PCPID
