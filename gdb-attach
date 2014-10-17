@@ -1,0 +1,3 @@
+#!/bin/sh
+
+gdb /proc/$1/exec $1
