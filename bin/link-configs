@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+
+import os, sys
+
+# Maping file to its link.
+LINKS = {
+    "tmux.conf"  : "~/.tmux.conf",
+    "globalrc"   : "~/.globalrc",
+    "gitconfig"  : "~/.gitconfig"
+}
+
+# Find path of conf files.
+BASE_PATH = os.path.abspath(os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    os.pardir,
+    "conf"))
+
+for k in LINKS:
+    fr = os.path.abspath(os.path.join(BASE_PATH, k))
+    to = LINKS[k]
+    if os.path.lexists(os.path.expanduser(to)):
+        ans = ""
+        while (ans != "n" and
+               ans != "y" and
+               ans != "q"):
+            ans = raw_input("{} exists, replace(y/n/q)? ".format(to))
+
+        if ans == "n":
+            continue
+        if ans == "q":
+            sys.exit(1)
+
+        # user want's to replace the existing link.
+        print "replacing {}".format(to)
+        try:
+            os.remove(os.path.expanduser(to))
+        except:
+            # Not able to delete, give up.
+            print "Not able to remove {}.".format(to)
+            continue
+
+    os.system("ln -s {} {}".format(fr, to))
