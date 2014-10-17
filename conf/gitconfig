@@ -6,7 +6,6 @@
 	rb = rebase
 	co = checkout
 	recmt = commit --amend -C HEAD
-	fp = format-patch -U8 -o /home/patrick/w/p
 	fa = fetch --all
 [user]
 	name = Patrick Wang (Chih-Kai Wang)
