@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "Linux" = "$(uname -s)" ]; then
+    gdb /proc/$1/exec $1
+else
+    # - In a Mac, we use lldb
+    lldb -p $1
+fi
+
