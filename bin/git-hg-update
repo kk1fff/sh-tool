@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+
+import os
+from git_hg_conf import HG_BASE
+
+os.chdir(HG_BASE)
+
+# delete all patches from mq
+os.system("hg qpop -a 2>/dev/null")
+while os.system("hg qdel 0 2>/dev/null") == 0:
+    pass
+
+os.system("hg pull -u")

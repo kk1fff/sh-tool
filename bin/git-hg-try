@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+
+import os, sys, tempfile, shutil, glob
+
+from git_hg_conf import HG_BASE
+
+if len(sys.argv) != 2:
+    print "Usage: {} <base version>".format(sys.argv[0])
+    sys.exit(1)
+
+# make patch
+tmp_dir = tempfile.mkdtemp()
+print ""
+print "Making patches from git..."
+if os.system("git format-patch -U8 -o \"{}\" \"{}\""
+             .format(tmp_dir, sys.argv[1])) != 0:
+    print "Not able to create patch based on version \"{}\"".format(sys.argv[1])
+    shutil.rmtree(tmp_dir)
+    sys.exit(1)
+
+os.chdir(HG_BASE)
+
+# delete all patches from mq
+print ""
+print "Deleting patches from hg..."
+os.system("hg qpop -a 2>/dev/null")
+while os.system("hg qdel 0 2>/dev/null") == 0:
+    pass
+
+# import to hg and delete tmp dir
+print ""
+print "Importing patches into hg..."
+os.system("hg qim {}".format(' '.join(map(lambda x: '"{}"'.format(x),
+                                          sorted(glob.glob(tmp_dir + '/*'))))))
+shutil.rmtree(tmp_dir)
+
+print ""
+print "Applying patches..."
+if os.system("hg qpush -a") != 0:
+    print "Not able to apply patches"
+    sys.exit(1)
+
+print ""
+print "Will now push..."
+os.system("hg qnew try -m 'try: -b do -p all -u all -t none'")
+os.system("hg push -f ssh://hg.mozilla.org/try")
