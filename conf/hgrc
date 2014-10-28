@@ -1,0 +1,29 @@
+[defaults]
+diff = -p -U 8
+qdiff = -p -U 8
+qnew = -U
+
+[extensions]
+mq =
+hgext.extdiff =
+color =
+hgext.git =
+hgext.bookmarks =
+
+[diff]
+git = 1
+showfunc = 1
+unified = 8
+
+[ui]
+username = Patrick Wang (Chih-Kai Wang) <kk1fff@patrickz.net>
+
+[paths]
+try = ssh://hg.mozilla.org/try
+inbound = ssh://hg.mozilla.org/integration/mozilla-inbound
+birch = ssh://hg.mozilla.org/projects/birch
+b2ginbound = ssh://hg.mozilla.org/integration/b2g-inbound
+1_3t = ssh://hg.mozilla.org/releases/mozilla-b2g28_v1_3t
+
+[extdiff]
+cmd.meld =

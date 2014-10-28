@@ -6,7 +6,8 @@ import os, sys
 LINKS = {
     "tmux.conf"  : "~/.tmux.conf",
     "globalrc"   : "~/.globalrc",
-    "gitconfig"  : "~/.gitconfig"
+    "gitconfig"  : "~/.gitconfig",
+    "hgrc"       : "~/.hgrc"
 }
 
 # Find path of conf files.
