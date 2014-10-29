@@ -3,7 +3,7 @@
 import os
 from git_hg_conf import HG_BASE
 
-os.chdir(HG_BASE)
+os.chdir(os.path.expanduser(HG_BASE))
 
 # delete all patches from mq
 os.system("hg qpop -a 2>/dev/null")
