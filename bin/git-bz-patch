@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os, sys, subprocess, shutil
-from git_hg_config import PATCH_DIR
+from git_hg_conf import PATCH_DIR
 
 if len(sys.argv) < 2:
     print "git bz-patch <version>"

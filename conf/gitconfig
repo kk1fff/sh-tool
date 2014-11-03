@@ -4,6 +4,8 @@
 	cmt = commit
 	gl = log --graph
 	rb = rebase
+  rbc = rebase --continue
+  rbi = rebase -i
 	co = checkout
 	recmt = commit --amend -C HEAD
 	fa = fetch --all
