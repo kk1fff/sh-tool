@@ -4,16 +4,18 @@ import os, sys, tempfile, shutil, glob
 
 from git_hg_conf import HG_BASE
 
-if len(sys.argv) != 2:
-    print "Usage: {} <base version>".format(sys.argv[0])
+if not len(sys.argv) in [2, 3]:
+    print "Usage: {} <base version> [last version]".format(sys.argv[0])
     sys.exit(1)
 
 # make patch
 tmp_dir = tempfile.mkdtemp()
 print ""
 print "Making patches from git..."
-if os.system("git format-patch -U8 -o \"{}\" \"{}\""
-             .format(tmp_dir, sys.argv[1])) != 0:
+if os.system("git format-patch -U8 -o \"{}\" \"{}{}\""
+             .format(tmp_dir,
+                     sys.argv[1],
+                     "" if len(sys.argv) == 2 else "..{}".format(sys.argv[2]))) != 0:
     print "Not able to create patch based on version \"{}\"".format(sys.argv[1])
     shutil.rmtree(tmp_dir)
     sys.exit(1)
