@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os, sys
+from subprocess import check_output
 
 # Maping file to its link.
 LINKS = {
@@ -9,6 +10,13 @@ LINKS = {
     "gitconfig"  : "~/.gitconfig",
     "hgrc"       : "~/.hgrc"
 }
+
+# Linux only link
+LINKS_LINUX = {
+    "Xresources" : "~/.Xresources"
+}
+if check_output(['uname']).strip() == "Linux":
+    LINKS.update(LINKS_LINUX)
 
 # Find path of conf files.
 BASE_PATH = os.path.abspath(os.path.join(

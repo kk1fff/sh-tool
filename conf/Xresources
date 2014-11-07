@@ -1,0 +1,90 @@
+! General
+urxvt*256-color:          true
+urxvt*loginShell:         true
+urxvt*scrollBar:         false
+urxvt*secondaryScroll:    true
+urxvt*saveLines:         65535
+urxvt*cursorBlink:       false
+urxvt*urgentOnBell:       true
+! urxvt*override-redirect:false
+! urxvt*borderLess:       false
+! urxvt*internalBorder:       0
+! urxvt*externalBorder:       0
+urxvt*iso14755:          false
+urxvt*termName:          xterm-256color
+urxvt*buffered:          false
+
+! Extensions
+! urxvt*perl-lib:        /usr/lib/urxvt/perl/
+! urxvt*perl-ext-common: default,matcher,searchable-scrollback
+! urxvt*urlLauncher:     /usr/bin/firefox
+! urxvt*matcher.button:  1
+!  - catch ugly URLs
+! urxvt.cutchars:        `()'*<>[]{|}"
+
+! Appearance
+!  - use a bitmap font
+!  - use xft for drawing fonts
+urxvt*font:         xft:Terminus:style=Regular:pixelsize=14
+!  - cursor
+urxvt*cursorColor: #b0b0b0
+!  - pseudo transparency
+! urxvt*shading:    50
+! urxvt*transparent:true
+
+! - color scheme
+urxvt.background: #000000
+urxvt.foreground: #c0c0c0
+! black + red
+!urxvt*color0: #3f3f3f
+urxvt*color0: #000000
+urxvt*color1: #bb2520
+! green + yellow
+urxvt*color2: #00bb00
+urxvt*color3: #bbbb00
+! blue + purple
+urxvt*color4: #0000bb
+urxvt*color5: #bb00bb
+! cyan + white
+urxvt*color6: #00bbbb
+urxvt*color7: #b2b2b2
+! bright-black + bright-red
+urxvt*color8: #555555
+urxvt*color9: #ff5555
+! bright-green + bright-yellow
+urxvt*color10: #55ff55
+urxvt*color11: #ffff55
+! bright-blue + bright-purple
+urxvt*color12: #5555ff
+urxvt*color13: #ff55ff
+! bright-cyan + bright-white
+urxvt*color14: #55ffff
+urxvt*color15: #d1d1d1
+
+xterm*utf8: true
+xterm*termName: xterm-256color
+xterm*faceName: xft:Terminus:style=Regular:pixelsize=14
+xterm*faceNameDoublesize: xft:WenQuanYi Micro Hei Mono:pixelsize=14
+xterm*wideChars: true
+xterm*background: black
+xterm*foreground: #c0c0c0
+xterm*cursorColor: #c0c0c0
+xterm*metaSendsEscape: true
+! xterm*cjkWidth: true
+
+xterm*color0:  #000000
+xterm*color1:  #bb2520
+xterm*color2:  #00bb00
+xterm*color3:  #bbbb00
+xterm*color4:  #0000bb
+xterm*color5:  #bb00bb
+xterm*color6:  #00bbbb
+xterm*color7:  #b2b2b2
+xterm*color8:  #555555
+xterm*color9:  #ff5555
+xterm*color10: #55ff55
+xterm*color11: #ffff55
+xterm*color12: #5555ff
+xterm*color13: #ff55ff
+xterm*color14: #55ffff
+xterm*color15: #d1d1d1
