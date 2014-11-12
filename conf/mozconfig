@@ -1,0 +1,26 @@
+ac_add_options --enable-debug="-g3"
+ac_add_options --enable-accessibility
+ac_add_options --enable-signmar
+ac_add_options --disable-optimize
+
+# mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../firefox-obj
+# WebRTC testing.
+# mk_add_options MOZ_WEBRTC_TESTS=1
+
+mk_add_options MOZ_MAKE_FLAGS="-j8"
+# Treat warnings as errors in directories with FAIL_ON_WARNINGS.
+# ac_add_options --enable-warnings-as-errors
+ac_add_options --with-ccache
+
+## For fennec
+# ac_add_options --enable-application=mobile
+
+## Enable parallel compiling
+
+# For xpcshell
+# ac_add_options --enable-application=b2g
+# ac_add_options --enable-b2g-ril
+ac_add_options --enable-tests
+
+# Package js shell.
+export MOZ_PACKAGE_JSSHELL=1
