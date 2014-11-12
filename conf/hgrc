@@ -7,7 +7,6 @@ qnew = -U
 mq =
 hgext.extdiff =
 color =
-hgext.git =
 hgext.bookmarks =
 
 [diff]

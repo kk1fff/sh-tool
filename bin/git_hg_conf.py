@@ -1,2 +1,2 @@
-HG_BASE = "~/w/hgpool/hg/central"
+HG_BASE = "~/w/h/hg-central"
 PATCH_DIR = "~/w/p"
