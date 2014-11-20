@@ -9,8 +9,8 @@ if len(sys.argv) < 2:
 
 patch_dir = os.path.expanduser(PATCH_DIR)
 
-if os.path.isdir(PATCH_DIR):
-    shutil.rmtree(PATCH_DIR)
+if os.path.isdir(patch_dir):
+    shutil.rmtree(patch_dir)
 
 print subprocess.check_output(['git', 'format-patch', '-o', patch_dir,
                                '-U8', sys.argv[1]])
