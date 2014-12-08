@@ -2,7 +2,7 @@
 	ui = auto
 [alias]
 	cmt = commit
-	gl = log --graph
+	gl = log --graph --decorate
 	rb = rebase
   rbc = rebase --continue
   rbi = rebase -i
