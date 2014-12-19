@@ -10,5 +10,5 @@
 	recmt = commit --amend -C HEAD
 	fa = fetch --all
 [user]
-	name = Patrick Wang (Chih-Kai Wang)
-	email = kk1fff@patrickz.net
+	name = Chih-Kai (Patrick) Wang
+	email = kk1fff@ckwang.info

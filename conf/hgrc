@@ -15,7 +15,7 @@ showfunc = 1
 unified = 8
 
 [ui]
-username = Patrick Wang (Chih-Kai Wang) <kk1fff@patrickz.net>
+username = Chih-Kai (Patrick) Wang <kk1fff@ckwang.info>
 
 [paths]
 try = ssh://hg.mozilla.org/try
