@@ -8,7 +8,8 @@ LINKS = {
     "tmux.conf"  : "~/.tmux.conf",
     "globalrc"   : "~/.globalrc",
     "gitconfig"  : "~/.gitconfig",
-    "hgrc"       : "~/.hgrc"
+    "hgrc"       : "~/.hgrc",
+    "xsession"   : "~/.xsession"
 }
 
 # Linux only link
