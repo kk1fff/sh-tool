@@ -9,7 +9,8 @@ LINKS = {
     "globalrc"   : "~/.globalrc",
     "gitconfig"  : "~/.gitconfig",
     "hgrc"       : "~/.hgrc",
-    "xsession"   : "~/.xsession"
+    "xsession"   : "~/.xsession",
+    "zshrc"      : "~/.zshrc.local"
 }
 
 # Linux only link
