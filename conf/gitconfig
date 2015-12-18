@@ -12,3 +12,5 @@
 [user]
 	name = Chih-Kai (Patrick) Wang
 	email = kk1fff@ckwang.info
+[push]
+	default = simple
